@@ -95,12 +95,14 @@ p:hover {
 }
 
 #myImg {
-    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 5px 5px 5px #666;
 }
 
-#myImg:hover {opacity: 0.7;}
+#myImg:hover {
+  top :-3px;
+  box-shadow: 15px 15px 15px #777;}
 
 /* The Modal (background) */
 .modal {
@@ -179,3 +181,56 @@ p:hover {
         width: 90%;
     }
 }
+
+$size: 200px;
+$outer: 10px; //even number for better results 
+$border: black;
+$line-width: 2px;
+
+
+
+#wrapper {
+	margin-top: 10vh;
+}
+
+.avatar {
+  position: relative;
+  &-line, &-line::before {
+    border-radius: 50%;
+    border-width: $line-width;
+    border-style: solid;
+    transition: transform 1s ease-in-out;
+  }
+  &-line {
+    position: absolute;
+    top: -($line-width + $outer/2);
+    left: -($line-width + $outer/2);
+    width: $size+$outer;
+    height: $size+$outer;
+    border-color: transparent $border $border $border;
+    &::before {
+      position: absolute;
+      content: '';
+      top: -($line-width + $outer/2);
+      left: -($line-width + $outer/2);
+      width: $size+$outer*2;
+      height: $size+$outer*2;
+      border-color: $border $border transparent $border;
+    }
+    &:hover {
+      animation: avatar-line-animation 1s ease-in-out;
+    }
+  }
+  &-pic {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+  }
+}
+
+@keyframes avatar-line-animation {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
