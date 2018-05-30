@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="jquery.js"></script>
+	<script src="imagelightbox.js"></script>
+  </head>
+
+  <body>
+  	<div class="nav">
+      <ul>
+        <li class="home"><a href="#">Portfolio</a></li>
+        <li class="tutorials"><a class="active" href="#">Image</a></li>
+        <li class="about"><a href="#">About</a></li>
+        <li class="news"><a href="#">Resume</a></li>
+        <li class="contact"><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <%= yield %>
+  </body>
+</html>
