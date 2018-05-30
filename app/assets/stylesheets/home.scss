@@ -1,12 +1,16 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300');
+
+$font: 'Josefin Sans';
+
 body{
   max-width: 900px;
   float: none;
   margin: auto;
   background-image: url("background.jpg");
-  font-family: 'Montserrat', sans-serif;
 }
 #portfolio {  
     margin: 1rem 0;
@@ -234,3 +238,139 @@ $line-width: 2px;
   100% {transform: rotate(0deg);}
 }
 
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  &__half {
+    width: 50vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+    &:not(:first-of-type) {
+      border-left: 1px solid #FFF;
+    }
+  }
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  z-index: 1;
+  
+  &:hover &__title,
+  &:hover &__subtitle{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &__title {
+    font-family: $font;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    transform: translateY(-50%);
+  }
+  
+  &__subtitle {
+    font-family: $font;
+    font-weight: 100;
+    color: #000;
+    font-size: 1.25rem;
+    margin-top: .4rem;
+    opacity: 0;
+    transform: translateY(-70%);
+    transition: all .5s ease-in-out;
+    transition-delay: .4s;
+  }
+  
+  &__icon {
+    color: #000;
+    margin-top: 2rem;
+    width: 30px;
+    height: 30px;
+    border: 2px #FFF solid;
+    border-radius: 50%;
+    padding: 4px;
+  }
+}
+
+.image {
+  width: auto;
+  height: 100%;
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
+  
+  &--softed {
+    opacity: .3;
+  }
+}
+
+.link:hover ~ .image {opacity: .3;}
+
+.credit {
+  font-family: $font;
+  color: #777;
+  font-size: 0.75rem;
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.infobox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  padding: 3rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all .5s ease-in-out;
+
+  
+  &--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  &__title {
+    font-family: $font;
+    color: #FFF;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  
+  &__text {
+    font-family: $font;
+    color: #FFF;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-top: .5rem;
+  }
+  
+  &__icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #FFF;
+    opacity: .7;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
