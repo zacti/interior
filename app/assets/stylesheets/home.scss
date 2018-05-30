@@ -11,6 +11,7 @@ body{
   float: none;
   margin: auto;
   background-image: url("background.jpg");
+  font-family: $font;
 }
 #portfolio {  
     margin: 1rem 0;
@@ -344,22 +345,7 @@ $line-width: 2px;
     opacity: 1;
     transform: translateY(0);
   }
-  
-  &__title {
-    font-family: $font;
-    color: #FFF;
-    font-size: 3rem;
-    text-transform: uppercase;
-    line-height: 1.5;
-  }
-  
-  &__text {
-    font-family: $font;
-    color: #FFF;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-top: .5rem;
-  }
+
   
   &__icon {
     position: absolute;
@@ -373,4 +359,42 @@ $line-width: 2px;
       opacity: 1;
     }
   }
+}
+
+.picture{
+	margin-left: 25%;
+}
+.pic {
+	position: relative;
+}
+
+.pic1 {
+	position: absolute;
+	animation: myfirst 3s 2;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+
+@keyframes myfirst {
+    100% {margin-left: 10%;}
+}
+
+.pic2 {
+	position: absolute;
+	animation: mysecond 3s 2;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+
+}
+
+@keyframes mysecond {
+    100% {margin-left: 5%;}
+}
+
+div.backabout{
+	background-color: #333;
+	height: 25vh;
+	color:white;
+	text-align: center;
+	padding: 15px;
 }
