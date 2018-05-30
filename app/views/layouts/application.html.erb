@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<%= favicon_link_tag asset_path('me.jpg'), :rel => 'icon', :type =>  'image/png' %>
     <title>Portfolio</title>
 
@@ -11,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="jquery.js"></script>
 	<script src="imagelightbox.js"></script>
+	
   </head>
 
   <body>
@@ -20,7 +22,6 @@
         <li class="tutorials"><%= link_to "Image" ,home_image_path %></a></li>
         <li class="about"><%= link_to "About" ,home_about_path %></li>
         <li class="news"><a href="#">Resume</a></li>
-        <li class="contact"><a href="#">Contact</a></li>
       </ul>
     </div>
     <%= yield %>
