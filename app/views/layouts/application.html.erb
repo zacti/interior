@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<%= favicon_link_tag asset_path('me.jpg'), :rel => 'icon', :type =>  'image/png' %>
     <title>Portfolio</title>
-
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
     <script src="jquery.js"></script>
-	<script src="imagelightbox.js"></script>
-	
+	<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
   </head>
 
   <body>
-  	<div class="nav">
-      <ul>
-        <li class="home"><%= link_to "Portfolio" ,root_path %></li>
-
-      </ul>
-    </div>
     <%= yield %>
   </body>
 </html>
